@@ -1,0 +1,32 @@
+ 1:- Write a program to implement list to series conversion. 
+
+#Pandas Series from a list 
+import pandas as pd 
+a = [1, 7, 2] 
+myvar = pd.Series(a) 
+print(myvar) 
+
+ans:
+0    1
+1    7
+2    2
+dtype: int64
+
+ Write a python program to generate the series of dates from 20th         
+November 2024 to 24th November 2024(both inclusive). 
+import pandas as pd 
+# Date range 
+date_series = pd.date_range(start='2024-11-20', end='2024-11-24') 
+print("Date Series:") 
+for date in date_series: 
+    print(date)
+
+ans:\
+Date Series:
+2024-11-20 00:00:00
+2024-11-21 00:00:00
+2024-11-22 00:00:00
+2024-11-23 00:00:00
+2024-11-24 00:00:00
+
+Given a 2D list convert it in to corresponding data frame and display it.
