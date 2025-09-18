@@ -1,0 +1,95 @@
+Write a python program for matrix operation using vectorization.
+
+import numpy as np 
+print("Matrix Operation") 
+a=np.array([[2,4], 
+[6,3]]) 
+b=np.array([[1,2], 
+[3,5]]) 
+Matrix Operation
+c=a+b 
+d=a-b 
+e=a*b 
+f=np.dot(a,b) 
+a_transpose=a.T 
+print("\nMatrix A:\n",a) 
+print("\nMatrix B:\n",b) 
+print("\nAddition:\n",c) 
+print("\nSubstraction:\n",d) 
+print("\nMultiplication (Element-wise):\n",e) 
+print("\nMultiplication (Row x Column):\n",f) 
+print("\nTranspose:\n",a_transpose) 
+
+Matrix A:
+ [[2 4]
+ [6 3]]
+
+Matrix B:
+ [[1 2]
+ [3 5]]
+
+Addition:
+ [[3 6]
+ [9 8]]
+
+Substraction:
+ [[ 1  2]
+ [ 3 -2]]
+
+Multiplication (Element-wise):
+ [[ 2  8]
+ [18 15]]
+
+Multiplication (Row x Column):
+ [[14 24]
+ [15 27]]
+
+Transpose:
+ [[2 6]
+ [4 3]]
+
+
+ 2. Matrix operation using  transformation using python and SVD using 
+Python
+
+import numpy as np 
+# Creating a matrix A 
+A = np.array([[3, 4, 3], 
+[1, 2, 3], 
+[4, 2, 1]]) 
+print("Original Matrix A:\n", A)
+# Performing SVD 
+U, D, VT = np.linalg.svd(A) 
+print("\nMatrix U:\n", U) 
+print("\nSingular Values D:\n", D) 
+print("\nMatrix VT:\n", VT) 
+# Creating a diagonal matrix from D 
+D_matrix = np.zeros((U.shape[0], VT.shape[0])) 
+np.fill_diagonal(D_matrix, D) 
+# Checking if we can remake the original matrix using U, D_matrix, VT 
+A_remake = (U @ D_matrix @ VT) 
+print("\nReconstructed Matrix (REMAKE):\n", A_remake) 
+
+
+Original Matrix A:
+ [[3 4 3]
+ [1 2 3]
+ [4 2 1]]
+
+Matrix U:
+ [[-0.73553325 -0.18392937 -0.65204358]
+ [-0.42657919 -0.62196982  0.65664582]
+ [-0.52632788  0.76113306  0.37901904]]
+
+Singular Values D:
+ [7.87764972 2.54031671 0.69958986]
+
+Matrix VT:
+ [[-0.60151068 -0.61540527 -0.5093734 ]
+ [ 0.73643349 -0.18005275 -0.65210944]
+ [ 0.30959751 -0.76737042  0.5615087 ]]
+
+Reconstructed Matrix (REMAKE):
+ [[3. 4. 3.]
+ [1. 2. 3.]
+ [4. 2. 1.]]
